@@ -55,12 +55,17 @@ android {
 }
 
 dependencies {
+
+    // test desugaring
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5") // <- this dependency is required
+    
     // Core libraries
     implementation "androidx.core:core-ktx:1.7.0"
     implementation "androidx.appcompat:appcompat:1.4.0"
     implementation "com.google.android.material:material:$version_material"
     implementation "com.google.android.material:material:1.6.0-alpha01"
     implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+    
 
     // Lifecycle
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0"
