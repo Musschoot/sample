@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="UserProfileViewModel"
+            type="training.squads.fitnessapp.screens.userProfile.UserProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="75dp"
+        tools:context="training.squads.fitnessapp.screens.userProfile.UserProfileFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <LinearLayout
+                android:id="@+id/user_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/user_profile_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/group_lesson_end_time"
+                    android:minWidth="100dp"
+                    android:minHeight="100dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_person_pin_24" />
+
+                <TextView
+                    android:id="@+id/user_profile_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/user_profile_title"
+                    android:textAlignment="center"
+                    android:textColor="@color/soft_black"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/user_profile_img" />
+
+                <!--
+                    User profile:
+                    email, role, status,
+                    firstName, lastName,
+                    birthDay,
+                    street, houseNumber, location, postalCode,
+                    phone,
+                    newsletter, whatsapp, houseRules,
+                    trial,
+                    totalCredits,
+                -->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/user_profile_first_name_txtcontainer"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/user_profile_email"
+                    android:paddingTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/user_profile_title">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/user_profile_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_profile_email"
+                        android:enabled="false"
+                        android:minWidth="200dp"
+                        android:minHeight="48dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/user_profile_credits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/user_profile_credits"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/soft_black"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/user_profile_first_name_txtcontainer" />
+
+                <TextView
+                    android:id="@+id/user_profile_credits_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/user_profile_credits_history"
+                    android:textAlignment="center"
+                    android:textColor="@color/soft_black"
+                    android:textSize="18sp"
+                    android:textStyle="normal|bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/user_profile_credits" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/credits_list_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/user_profile_credits_history">
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <Button
+                    android:id="@+id/submit_button"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClickListener="@{() -> UserProfileViewModel.submitUserCLick()}"
+                    android:text="@string/submit"
+                    android:minHeight="75dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/credits_list_rv" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

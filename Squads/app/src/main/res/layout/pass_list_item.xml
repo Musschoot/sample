@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="pass"
+            type="training.squads.fitnessapp.domain.Pass" />
+        <variable
+            name="clickPassListener"
+            type="training.squads.fitnessapp.screens.userProfile.PassesListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/card"
+        android:onClick="@{() -> clickPassListener.onClick(pass)}">
+
+
+        <TextView
+            android:id="@+id/credits_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textStyle="bold"
+            android:text="@string/credits_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/credits_purchase_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textStyle="normal"
+            android:text="@{pass.purchaseTime.toString()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/credits_title"
+            tools:text="Placeholder title" />
+
+        <TextView
+            android:id="@+id/credits_sessions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/credits_purchase_time"
+            tools:text="Placeholder title" />
+
+        <TextView
+            android:id="@+id/credits_payment_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/credits_sessions"
+            tools:text="Placeholder title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

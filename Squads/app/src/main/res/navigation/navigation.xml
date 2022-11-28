@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/reservations">
+    <!-- drawer -->
+    <include app:graph="@navigation/profile" />
+    <include app:graph="@navigation/settings" />
+
+
+    <!-- bottom -->
+    <include app:graph="@navigation/sessions" />
+    <include app:graph="@navigation/reservations" />
+    <include app:graph="@navigation/evolution" />
+    <fragment
+        android:id="@+id/formulas"
+        android:name="training.squads.fitnessapp.fitnessFormulas.FitnessFormulasFragment"
+        android:label="fragment_fitness_formulas"
+        tools:layout="@layout/fragment_fitness_formulas" />
+    <fragment
+        android:id="@+id/houseRules"
+        android:name="training.squads.fitnessapp.screens.information.HouseRulesFragment"
+        android:label="HouseRulesFragment" />
+    <fragment
+        android:id="@+id/mission"
+        android:name="training.squads.fitnessapp.screens.information.MissionFragment"
+        android:label="MissionFragment" />
+
+
+    <!--
+
+    formulas
+    logout
+     -->
+
+
+</navigation>

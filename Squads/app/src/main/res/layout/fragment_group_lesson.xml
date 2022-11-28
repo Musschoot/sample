@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<data>
+    <variable
+        name="groupLesson"
+        type="training.squads.fitnessapp.domain.GroupLesson" />
+    <variable
+        name="clickGroupLessonListener"
+        type="training.squads.fitnessapp.screens.groupLessons.GroupLessonsListener" />
+    <variable
+        name="clickGroupLessonDeleteListener"
+        type="training.squads.fitnessapp.screens.groupLessons.GroupLessonDeleteListener" />
+    <variable
+        name="clickGroupLessonUpdateListener"
+        type="training.squads.fitnessapp.screens.groupLessons.GroupLessonUpdateListener" />
+</data>
+
+<!--    TO DO: Hanne: link to actual data -->
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="116dp"
+    android:layout_marginBottom="75dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:background="@drawable/border_darker_grey"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/group_lesson_summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/group_lesson_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circle"
+            android:src="@drawable/ic_baseline_fitness_center_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/group_lesson_title"
+            app:layout_constraintBottom_toBottomOf="@id/group_lesson_time"
+            tools:srcCompat="@drawable/ic_baseline_fitness_center_24" />
+
+        <TextView
+            android:id="@+id/group_lesson_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textStyle="bold"
+            android:text="De titel van de les"
+            app:layout_constraintStart_toEndOf="@id/group_lesson_type"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Placeholder title" />
+
+        <TextView
+            android:id="@+id/group_lesson_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Datum: 07/11/2022"
+            app:layout_constraintStart_toStartOf="@id/group_lesson_title"
+            app:layout_constraintTop_toBottomOf="@id/group_lesson_title"
+            tools:text="Datum: 07/11/2022" />
+
+        <TextView
+            android:id="@+id/group_lesson_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Uur: 19:00 - 20:00"
+            app:layout_constraintStart_toStartOf="@id/group_lesson_title"
+            app:layout_constraintTop_toBottomOf="@id/group_lesson_date"
+            tools:text="Uur: 19:00 - 20:00" />
+
+        <ImageView
+            android:id="@+id/update_group_lesson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/group_lesson_update"
+            android:onClick="@{() -> clickGroupLessonUpdateListener.onClick(groupLesson)}"
+            android:layout_marginRight="8dp"
+            app:srcCompat="@drawable/ic_baseline_edit_24"
+            app:layout_constraintEnd_toStartOf="@id/delete_group_lesson"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/delete_group_lesson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/group_lesson_delete"
+            android:onClick="@{() -> clickGroupLessonDeleteListener.onClick(groupLesson)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_delete_24" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/lesson_comments_overview_scrollview"
+        android:layout_width="0dp"
+        android:layout_height="380dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/group_lesson_summary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/group_lesson_description_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/description"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/group_lesson_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/group_lesson_description_title"
+                tools:text="In deze les gaan we heel veel leuke oefeningen doen. We gaan heel veel sporten en heel erg moe worden"
+                android:text="In deze les gaan we heel veel leuke oefeningen doen. We gaan heel veel sporten en heel erg moe worden" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="32dp">
+
+                <TextView
+                    android:id="@+id/group_lesson_comment_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/comment"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/add_group_lesson_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/add_group_lesson_comment"
+                    android:layout_marginRight="8dp"
+                    app:srcCompat="@drawable/ic_baseline_add_circle_24_green"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/group_lesson_comment_title" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/group_lesson_comment_timestamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/group_lesson_comment_title"
+                tools:text="01/01/2022 01:01"
+                android:text="01/01/2022 01:01" />
+
+            <TextView
+                android:id="@+id/group_lesson_comment_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/group_lesson_comment_timestamp"
+                tools:text="Commentaar 1"
+                android:text="Commentaar 1" />
+
+            <TextView
+                android:id="@+id/group_lesson_comment_timestamp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/group_lesson_comment_title"
+                tools:text="01/01/2022 01:01"
+                android:text="01/01/2022 01:01" />
+
+            <TextView
+                android:id="@+id/group_lesson_comment_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/group_lesson_comment_timestamp"
+                tools:text="Commentaar 2"
+                android:text="Commentaar 2" />
+
+            <TextView
+                android:id="@+id/group_lesson_comment_timestamp3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/group_lesson_comment_title"
+                tools:text="01/01/2022 01:01"
+                android:text="01/01/2022 01:01" />
+
+            <TextView
+                android:id="@+id/group_lesson_comment_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/group_lesson_comment_timestamp"
+                tools:text="Commentaar 3"
+                android:text="Commentaar 3" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/group_lesson_enlist_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enlist"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="@id/lesson_comments_overview_scrollview"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

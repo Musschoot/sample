@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/reservations"
+    app:startDestination="@id/groupLessonsOverviewFragment">
+    <fragment
+        android:id="@+id/groupLessonsOverviewFragment"
+        android:name="training.squads.fitnessapp.screens.groupLessons.GroupLessonsOverviewFragment"
+        android:label="GroupLessonsOverviewFragment" >
+        <action
+            android:id="@+id/action_groupLessonsOverviewFragment_to_groupLessonFragment"
+            app:destination="@id/groupLessonFragment" />
+        <action
+            android:id="@+id/action_groupLessonsOverviewFragment_to_updateGroupLessonFragment"
+            app:destination="@id/updateGroupLessonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addGroupLessonFragment"
+        android:name="training.squads.fitnessapp.screens.addGroupLesson.AddGroupLessonFragment"
+        android:label="AddGroupLessonFragment" >
+        <action
+            android:id="@+id/action_addGroupLessonFragment_to_groupLessonsOverviewFragment"
+            app:destination="@id/groupLessonsOverviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupLessonFragment"
+        android:name="training.squads.fitnessapp.screens.groupLessonDetail.GroupLessonFragment"
+        android:label="GroupLessonFragment" >
+        <argument android:name="groupLesson"
+            app:argType="training.squads.fitnessapp.domain.GroupLesson" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateGroupLessonFragment"
+        android:name="training.squads.fitnessapp.screens.updateGroupLesson.UpdateGroupLessonFragment"
+        android:label="UpdateGroupLessonFragment" >
+        <argument
+            android:name="groupLesson"
+            app:argType="training.squads.fitnessapp.domain.GroupLesson" />
+        <action
+            android:id="@+id/action_updateGroupLessonFragment_to_groupLessonsOverviewFragment"
+            app:destination="@id/groupLessonsOverviewFragment" />
+    </fragment>
+</navigation>

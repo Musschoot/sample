@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="AddGroupLessonViewModel"
+            type="training.squads.fitnessapp.screens.addGroupLesson.AddGroupLessonViewModel" />
+    </data>
+
+    <!-- Properties of a group lesson: id, title, type, description, startDateTime, endDateTime, totalParticipants -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="75dp"
+        tools:context="training.squads.fitnessapp.screens.addGroupLesson.AddGroupLessonFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <LinearLayout
+                android:id="@+id/group_lesson_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/group_lesson_type_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="@string/group_lesson_type"
+                    android:ems="10"
+                    android:hint="@string/group_lesson_type"
+                    android:minHeight="48dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/group_lesson_type"
+                    android:textAlignment="center"
+                    android:textColor="@color/soft_black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:id="@+id/group_lesson_type_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checkedButton="@+id/group_lesson_type_radio_button_1"
+                    android:minHeight="48dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/group_lesson_type_title">
+
+                    <RadioButton
+                        android:id="@+id/group_lesson_type_radio_button_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:gravity="right|center_vertical"
+                        android:layoutDirection="rtl"
+                        android:text="@string/group_lesson_type_training"
+                        tools:ignore="RtlHardcoded" />
+
+                    <RadioButton
+                        android:id="@+id/group_lesson_type_radio_button_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/group_lesson_type_yoga" />
+                </RadioGroup>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/group_lesson_name_txtcontainer"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/group_lesson_name"
+                    android:paddingTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/group_lesson_type_radio_group">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/group_lesson_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:minWidth="200dp"
+                        android:minHeight="48dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/group_lesson_description_txtcontainer"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/group_lesson_description"
+                    android:paddingTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/group_lesson_name_txtcontainer">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/group_lesson_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textMultiLine"
+                        android:minWidth="200dp"
+                        android:minHeight="48dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/group_lesson_sdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/group_lesson_description_txtcontainer">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/group_lesson_start_date_txtcontainer"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/group_lesson_start_date"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/group_lesson_start_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:inputType="date"
+                            android:minWidth="125dp"
+                            android:minHeight="48dp"
+                            android:textAlignment="center" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/group_lesson_start_date_calendar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/group_lesson_start_date"
+                        android:paddingLeft="10dp"
+                        app:layout_constraintStart_toEndOf="@id/group_lesson_start_date"
+                        app:layout_constraintTop_toTopOf="@id/group_lesson_start_date"
+                        app:srcCompat="@drawable/ic_baseline_calendar_month_24" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/group_lesson_sTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/group_lesson_sdate">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/group_lesson_start_time_txtcontainer"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/group_lesson_start_time"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/group_lesson_start_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:inputType="time"
+                            android:minWidth="125dp"
+                            android:minHeight="48dp"
+                            android:textAlignment="center" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/group_lesson_start_time_calendar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/group_lesson_start_time"
+                        android:paddingLeft="10dp"
+                        app:layout_constraintStart_toEndOf="@id/group_lesson_start_time"
+                        app:layout_constraintTop_toTopOf="@id/group_lesson_start_time"
+                        app:srcCompat="@drawable/ic_baseline_access_time_24" />
+                </LinearLayout>
+
+                <!--
+                <LinearLayout
+                    android:id="@+id/group_lesson_eDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/group_lesson_sTime">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/group_lesson_end_date_txtcontainer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/group_lesson_end_date"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/group_lesson_end_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:inputType="date"
+                            android:minHeight="48dp"
+                            android:minWidth="125dp"
+                            android:textAlignment="center" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <ImageView
+                        android:id="@+id/group_lesson_end_date_calendar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toEndOf="@id/group_lesson_end_date"
+                        app:layout_constraintTop_toTopOf="@id/group_lesson_end_date"
+                        app:srcCompat="@drawable/ic_baseline_calendar_month_24"
+                        android:contentDescription="@string/group_lesson_end_date" />
+                </LinearLayout>
+                -->
+
+                <LinearLayout
+                    android:id="@+id/group_lesson_eTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/group_lesson_sTime">
+                    <!--app:layout_constraintTop_toBottomOf="@id/group_lesson_eDate"> -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/group_lesson_end_time_txtcontainer"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/group_lesson_end_time"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/group_lesson_end_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:inputType="time"
+                            android:minWidth="125dp"
+                            android:minHeight="48dp"
+                            android:textAlignment="center" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/group_lesson_end_time_calendar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/group_lesson_end_time"
+                        android:paddingLeft="10dp"
+                        app:layout_constraintStart_toEndOf="@id/group_lesson_end_time"
+                        app:layout_constraintTop_toTopOf="@id/group_lesson_end_time"
+                        app:srcCompat="@drawable/ic_baseline_access_time_24" />
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/group_lesson_participants_txtcontainer"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/group_lesson_participants"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="50dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/group_lesson_eTime">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/group_lesson_participants"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:minWidth="200dp"
+                        android:minHeight="48dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/submit_button"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:onClickListener="@{() -> AddGroupLessonViewModel.submitGroupLessonCLick()}"
+                    android:text="@string/submit"
+                    android:minHeight="75dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/group_lesson_participants_txtcontainer" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

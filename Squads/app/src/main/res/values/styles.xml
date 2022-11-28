@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ToolbarTheme" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">@color/soft_grey</item>
+        <item name="android:backgroundTint">@color/soft_black</item>
+        <item name="android:textColor">@color/soft_grey</item>
+        <item name="android:tint">@color/soft_grey</item>
+        <item name="drawerArrowStyle">@style/NavigationDrawerIcon</item>
+    </style>
+    <style name="NavigationDrawerIcon" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/soft_grey</item>
+    </style>
+    <style name="BottomNavigation" parent="@style/Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="android:background">@color/soft_black</item>
+        <item name="fontFamily">@font/gotham_light</item>
+    </style>
+    <style name="Overlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:backgroundTint">@color/soft_grey</item>
+        <item name="android:textColor">@color/soft_black</item>
+    </style>
+</resources>

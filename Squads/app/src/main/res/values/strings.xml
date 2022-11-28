@@ -1,0 +1,153 @@
+<resources>
+    <string name="app_name">Squads</string>
+
+    <string name="menu_mission">Missie statement</string>
+    <string name="menu_fitness_formulas">Onze formules</string>
+    <string name="menu_house_rules">Huisregels</string>
+    <string name="menu_overview_grouplessons">Mijn lessen</string>
+    <string name="menu_add_grouplesson">Reserveren</string>
+    <string name="menu_stats">Evolutie</string>
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="login_text">Je bent aangemeld!</string>
+    <string name="logout_text">Je bent afgemeld!</string>
+
+    <string name="welcome_text">Welkom</string>
+    <string name="login_button">Aanmelden</string>
+    <string name="logout_button">Afmelden</string>
+    <string name="trial_text">Trial</string>
+    <string name="free_text">Free</string>
+    <string name="one_workout_text">1 Group Workout</string>
+    <string name="one_yoga_text">1 Yoga Class</string>
+    <string name="standard_text">Standard</string>
+    <string name="euro_text">€</string>
+    <string name="price_70_text">70</string>
+    <string name="month_text">month</string>
+    <string name="multiple_workouts_text">Unlimited Group Workouts</string>
+    <string name="multiple_yoga_text">Unlimited Yoga Classes</string>
+    <string name="coaching_text">Personal Coaching</string>
+    <string name="flexible_text">Flexible</string>
+    <string name="price_100_text">100</string>
+    <string name="once_text">once</string>
+    <string name="ten_workouts_text">10 Group Workouts</string>
+    <string name="ten_yoga_text">10 Yoga Classes</string>
+    <string name="auth0_client_id">tQx8tR38ljUxihwQPHFr6muwUTQbJraU</string>
+    <string name="auth0_domain">squadstraining.eu.auth0.com</string>
+    <string name="auth0_scheme">demo</string>
+
+    <string name="grouplessonsoverview_fragment_title">Mijn groepslessen</string>
+    <string name="grouplessonsoverview_fragment_body">In constructie</string>
+
+    <string name="add_grouplesson_fragment_title">Reserveer groepsles</string>
+    <string name="add_grouplesson_fragment_body">In constructie</string>
+
+    <string name="stats_fragment_title">Mijn evolutie</string>
+    <string name="stats_fragment_body">In constructie</string>
+
+    <string name="mission_fragment_title">Onze missie</string>
+    <string name="mission_body_text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique nulla aliquet enim tortor at auctor. Orci eu lobortis elementum nibh tellus molestie nunc non. Donec pretium vulputate sapien nec sagittis aliquam malesuada. Amet commodo nulla facilisi nullam vehicula ipsum a arcu cursus. Cras sed felis eget velit. Turpis cursus in hac habitasse platea. Volutpat consequat mauris nunc congue. Pharetra diam sit amet nisl. Ullamcorper morbi tincidunt ornare massa eget egestas purus. Placerat in egestas erat imperdiet sed euismod nisi. Viverra orci sagittis eu volutpat odio. Augue mauris augue neque gravida in fermentum et. At in tellus integer feugiat scelerisque varius morbi enim nunc. Congue quisque egestas diam in arcu cursus. Egestas dui id ornare arcu. Phasellus faucibus scelerisque eleifend donec pretium. Tempus egestas sed sed risus pretium quam vulputate dignissim. Enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra. Pulvinar elementum integer enim neque.
+
+        Suspendisse faucibus interdum posuere lorem ipsum. Ut sem viverra aliquet eget sit. Eget aliquet nibh praesent tristique magna sit amet. At tempor commodo ullamcorper a lacus vestibulum sed. Augue eget arcu dictum varius duis at consectetur lorem donec. Adipiscing enim eu turpis egestas. Laoreet non curabitur gravida arcu ac tortor. Viverra mauris in aliquam sem fringilla ut. Nisl nisi scelerisque eu ultrices vitae auctor. Est lorem ipsum dolor sit amet consectetur adipiscing.
+    </string>
+    <string name="house_rules_fragment_title">Onze huisregels</string>
+    <string name="meer_info">Meer info</string>
+    <string name="mijn_groepslessen">Mijn groepslessen</string>
+    <string name="enlist">Inschrijven</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="header_text">header text</string>
+    <string name="header_title">header title</string>
+
+    <!-- Login and logout -->
+    <string name="no_login_button">Ga verder zonder inloggen</string>
+    <string name="invalid_login">Ongeldige aanmelding, probeer opnieuw</string>
+    <string name="login_ok">Hallo!</string>
+    <string name="login_nok">Login mislukt, probeer opnieuw</string>
+    <string name="logout_ok">Tot ziens!</string>
+    <string name="logout_nok">Logout mislukt, probeer opnieuw</string>
+
+    <!-- Form submission-->
+    <string name="cancel">Annuleer</string>
+    <string name="submit">Indienen</string>
+
+    <!-- Navigation-->
+    <string name="login_nav_title">Aanmelden</string>
+    <string name="add_group_lesson_nav_title">Maak groepsles</string>
+
+    <!-- Date and time picker -->
+    <string name="select_date">Selecteer datum</string>
+    <string name="select_time">Selecteer tijd</string>
+
+    <!-- Group lesson -->
+    <string name="group_lesson_name">Naam groepsles</string>
+    <string name="group_lesson_type">Type groepsles</string>
+    <string name="group_lesson_type_training">Training</string>
+    <string name="group_lesson_type_yoga">Yoga</string>
+    <string name="group_lesson_description">Korte beschrijving</string>
+    <string name="group_lesson_participants">Aantal deelnemers</string>
+    <string name="group_lesson_start_date">Startdatum</string>
+    <string name="group_lesson_end_date">Einddatum</string>
+    <string name="group_lesson_start_time">Starttijd</string>
+    <string name="group_lesson_end_time">Eindtijd</string>
+    <string name="group_lesson_created">Groepsles aangemaakt!</string>
+    <string name="group_lesson_saved">Groepsles opgeslagen!</string>
+    <string-array name="group_lesson_types">
+        <item>Training</item>
+        <item>Yoga</item>
+    </string-array>
+    <string name="group_lesson_delete">Groepsles verwijderd!</string>
+    <string name="group_lesson_update">Groepsles upgedatet!</string>
+
+    <!--Detail page grouplesson-->
+    <string name="description">Beschrijving:</string>
+    <string name="comment">Commentaren:</string>
+    <string name="add_group_lesson_comment">Commentaar toevoegen</string>
+
+    <!-- User profile -->
+    <string name="user_profile_title">Mijn profiel</string>
+    <string name="user_profile_email">Emailadres</string>
+    <string name="user_profile_role">Rol</string>
+    <string name="user_profile_status">Status</string>
+    <string name="user_profile_firstName">Voornaam</string>
+    <string name="user_profile_lastName">Achternaam</string>
+    <string name="user_profile_birthDay">Geboortedatum</string>
+    <string name="user_profile_street">Straat</string>
+    <string name="user_profile_houseNumber">Huisnummer</string>
+    <string name="user_profile_location">Locatie</string>
+    <string name="user_profile_postalCode">Postcode</string>
+    <string name="user_profile_phone">Telefoon</string>
+    <string name="user_profile_newsletter">Nieuwsbrief toestemming</string>
+    <string name="user_profile_whatsapp">WhatsApp toestemming</string>
+    <string name="user_profile_houseRules">Huisregels ondertekend</string>
+    <string name="user_profile_trial">Proefles genomen</string>
+    <string name="user_profile_credits">Aantal credits</string>
+    <string name="user_profile_credits_history">Overzicht aankopen</string>
+
+    <!-- Credits and subscriptions -->
+    <string name="credits_title">Beurtenkaart</string>
+    <string name="credits_purchase_time">Aankoopdatum</string>
+    <string name="credits_sessions">Aantal sessies</string>
+    <string name="credits_payment_status">Betaalstatus</string>
+    <string name="payment_status_paid">Betaald</string>
+    <string name="payment_status_unpaid">Te betalen</string>
+
+</resources>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="groupLesson"
+            type="training.squads.fitnessapp.domain.GroupLesson" />
+        <variable
+            name="clickGroupLessonListener"
+            type="training.squads.fitnessapp.screens.groupLessons.GroupLessonsListener" />
+        <variable
+            name="clickGroupLessonDeleteListener"
+            type="training.squads.fitnessapp.screens.groupLessons.GroupLessonDeleteListener" />
+        <variable
+            name="clickGroupLessonUpdateListener"
+            type="training.squads.fitnessapp.screens.groupLessons.GroupLessonUpdateListener" />
+    </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/card"
+            android:onClick="@{() -> clickGroupLessonListener.onClick(groupLesson)}">
+
+            <ImageView
+                android:id="@+id/group_lesson_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/group_lesson_title"
+                app:layout_constraintBottom_toBottomOf="@id/group_lesson_time"
+                tools:srcCompat="@drawable/ic_baseline_fitness_center_24" />
+
+            <TextView
+                android:id="@+id/group_lesson_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/group_lesson_type"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Placeholder title" />
+
+            <TextView
+                android:id="@+id/group_lesson_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/group_lesson_title"
+                app:layout_constraintTop_toBottomOf="@id/group_lesson_title"
+                tools:text="Datum: 07/11/2022" />
+
+            <TextView
+                android:id="@+id/group_lesson_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/group_lesson_title"
+                app:layout_constraintTop_toBottomOf="@id/group_lesson_date"
+                tools:text="Uur: 19:00 - 20:00" />
+
+            <ImageView
+                android:id="@+id/update_group_lesson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/group_lesson_update"
+                android:onClick="@{() -> clickGroupLessonUpdateListener.onClick(groupLesson)}"
+                android:layout_marginRight="8dp"
+                app:srcCompat="@drawable/ic_baseline_edit_24"
+                app:layout_constraintEnd_toStartOf="@id/delete_group_lesson"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/delete_group_lesson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/group_lesson_delete"
+                android:onClick="@{() -> clickGroupLessonDeleteListener.onClick(groupLesson)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_baseline_delete_24" />
+
+            <Button
+                android:id="@+id/group_lesson_info_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:onClick="@{() -> clickGroupLessonListener.onClick(groupLesson)}"
+                android:text="@string/meer_info"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/group_lesson_time" />
+
+            <Button
+            android:id="@+id/group_lesson_enlist_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enlist"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/group_lesson_info_button" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
